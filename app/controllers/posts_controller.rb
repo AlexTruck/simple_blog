@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
-  before_filter :get_post, :except => [:index, :new]
+  before_filter :get_post, :except => [:index, :new, :create]
 
   # GET /posts
   # GET /posts.xml
   def index
     @posts = Post.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }
@@ -39,7 +38,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.xml
   def create
-    @post = Post.new(params[:post])
+    @post = Post.create(params[:post])
 
     respond_to do |format|
       if @post.save
@@ -74,24 +73,6 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
-    end
-  end
-
-  def like
-    @post = Post.find(params[:id])
-    @post.liked
-    respond_to do |format|
-      format.html { redirect_to @post }
-      format.js { render :layout => false }
-    end
-  end
-
-  def unlike
-    @post = Post.find(params[:id])
-    @post.unliked
-    respond_to do |format|
-      format.html { redirect_to @post }
-      format.js { render :layout => false }
     end
   end
 

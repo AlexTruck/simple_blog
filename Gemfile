@@ -6,7 +6,7 @@ gem 'rake','0.8.7'
 gem 'rdoc'
 gem 'sqlite3'
 gem 'simple_form'
-gem "devise", "1.0.6"
+gem 'devise', "1.0.6"
 
 # bundler requires these gems in all environments
 # gem 'nokogiri', '1.4.2'

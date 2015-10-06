@@ -2443,3 +2443,1762 @@ Processing PostsController#index (for 127.0.0.1 at 2015-10-06 17:49:01) [GET]
 Rendering template within layouts/posts
 Rendering posts/index
 Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-06 17:53:26) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (7.3ms)
+Completed in 123ms (View: 119, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-06 17:53:46) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"Ahahahahahah", "title"=>"Post", "name"=>"Alex", "tags_attributes"=>{"0"=>{"name"=>"Laugh"}}}}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:101:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (20.8ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-06 17:55:01) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"Ahahahahahah", "title"=>"Post", "name"=>"Alex", "tags_attributes"=>{"0"=>{"name"=>"Laugh"}}}}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:83:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (21.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-06 17:57:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Post with ID=1):
+  app/controllers/posts_controller.rb:83:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (55.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-06 17:58:00) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-06 17:58:04) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (5.9ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-06 17:58:20) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"Ahahahaha", "title"=>"Huh", "name"=>"Post", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:83:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-06 18:06:44) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-06 18:06:46) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (6.0ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-06 18:06:57) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"jfkgfkjgfkjfkjgfhjg", "title"=>"heh", "name"=>"Post", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:83:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-06 19:58:21) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"jfkgfkjgfkjfkjgfhjg", "title"=>"heh", "name"=>"Post", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:83:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-06 19:58:25) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-06 19:58:26) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (6.9ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-06 19:58:38) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"Hehehehehehehe", "title"=>"Heh", "name"=>"Huh", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:83:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (61.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-06 20:00:02) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-06 20:00:04) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (7.0ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-06 20:00:14) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"Huhuhuhuhuh", "title"=>"Hoho", "name"=>"Alex", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:83:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-06 20:51:27) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-06 20:51:31) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (6.8ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-06 20:51:43) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"Hohohohohoh", "title"=>"Hehe", "name"=>"Huhu", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:83:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-06 21:18:33) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-06 21:18:35) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (6.7ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-06 21:19:08) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"Vackhanalecs", "title"=>"Shmalex", "name"=>"Alex", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("updated_at", "content", "created_at", "name", "title") VALUES('2015-10-06 18:19:08', 'Vackhanalecs', '2015-10-06 18:19:08', 'Alex', 'Shmalex')[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 219ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-06 21:19:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-06 21:31:44) [POST]
+  Parameters: {"post_id"=>"1", "commit"=>"Create", "comment"=>{"body"=>"At last I've done it!", "commenter"=>"Alex"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Alex', 'At last I''ve done it!', 1, '2015-10-06 18:31:44', '2015-10-06 18:31:44')[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 260ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-06 21:31:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 48ms (View: 14, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-06 21:31:54) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 35ms (View: 29, DB: 0) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing CommentsController#edit (for 127.0.0.1 at 2015-10-06 21:31:57) [GET]
+  Parameters: {"post_id"=>"1", "id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 1 AND ("comments".post_id = 1)) [0m
+Rendering comments/edit
+Completed in 72ms (View: 65, DB: 0) | 200 OK [http://localhost/posts/1/comments/1/edit]
+
+
+Processing CommentsController#update (for 127.0.0.1 at 2015-10-06 21:32:06) [PUT]
+  Parameters: {"post_id"=>"1", "commit"=>"Update", "comment"=>{"body"=>"At last I've done it! Yahoo!!!", "commenter"=>"Alex"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+  [4;35;1mComment Update (0.2ms)[0m   [0mUPDATE "comments" SET "body" = 'At last I''ve done it! Yahoo!!!', "updated_at" = '2015-10-06 18:32:06' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/posts/1/comments/1
+Completed in 194ms (DB: 0) | 302 Found [http://localhost/posts/1/comments/1]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2015-10-06 21:32:06) [GET]
+  Parameters: {"post_id"=>"1", "id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 1 AND ("comments".post_id = 1)) [0m
+Rendering comments/show
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/1/comments/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-06 21:32:09) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-06 21:32:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-06 21:32:14) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing CommentsController#destroy (for 127.0.0.1 at 2015-10-06 21:32:17) [DELETE]
+  Parameters: {"post_id"=>"1", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 1) [0m
+  [4;36;1mComment Destroy (0.1ms)[0m   [0;1mDELETE FROM "comments" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/posts/1/comments
+Completed in 152ms (DB: 0) | 302 Found [http://localhost/posts/1/comments/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-06 21:32:17) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/index
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-06 21:32:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 45ms (View: 41, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-06 23:04:15) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-06 23:04:17) [GET]
+
+TypeError (wrong argument type String (expected Array)):
+  app/models/comment.rb:4:in `select'
+  app/models/comment.rb:4
+  rake (0.8.7) lib/rake.rb:2503:in `const_missing'
+  app/controllers/home_controller.rb:3:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-06 23:08:02) [GET]
+
+NameError (uninitialized constant HomeController::Posts):
+  app/controllers/home_controller.rb:3:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-06 23:08:32) [GET]
+
+NameError (uninitialized constant HomeController::Posts):
+  app/controllers/home_controller.rb:3:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-06 23:08:39) [GET]
+
+NameError (uninitialized constant HomeController::Posts):
+  app/controllers/home_controller.rb:3:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20151003115437)
+Migrating to CreateComments (20151003140510)
+Migrating to CreateTags (20151003141333)
+Migrating to DeviseCreateUsers (20151006144437)
+Migrating to AddCommentsCountToPosts (20151006201427)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "posts" ADD "comments_count" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20151006201427')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posts")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tags")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-06 23:38:46) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `order' for #<Class:0x7f3b148f8620>):
+  app/controllers/home_controller.rb:3:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered rescues/_trace (59.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-06 23:41:58) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `sort' for #<Class:0x7f3b14b4e528>):
+  app/controllers/home_controller.rb:3:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered rescues/_trace (23.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-06 23:43:24) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `where' for #<Class:0x7f3b14837ba0>):
+  app/controllers/home_controller.rb:3:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered rescues/_trace (60.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-06 23:44:41) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `order' for #<Class:0x7f3b14a27988>):
+  app/controllers/home_controller.rb:3:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered rescues/_trace (23.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-06 23:44:48) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `order' for #<Class:0x7f3b14ccf370>):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered rescues/_trace (24.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:02:27) [GET]
+
+NameError (uninitialized constant Post::Pacecar):
+  app/models/post.rb:2
+  rake (0.8.7) lib/rake.rb:2503:in `const_missing'
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:05:22) [GET]
+
+NameError (uninitialized constant Post::Pacecar):
+  app/models/post.rb:2
+  rake (0.8.7) lib/rake.rb:2503:in `const_missing'
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:14:46) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `order' for #<Class:0x7f3b147d3010>):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered rescues/_trace (20.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:15:02) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `order' for #<Class:0x7f3b149aa0a0>):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered rescues/_trace (19.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:18:11) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `joins' for #<Class:0x7f3b14c6c158>):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered rescues/_trace (19.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:23:45) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (private method `select' called for #<Class:0x7f3b1490e380>):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered rescues/_trace (54.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near "*": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.*, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:38:13) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near "*": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.*, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "*": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.*, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2015-10-07 01:39:43) [GET]
+
+SyntaxError (/home/truck/rails_projects/testings/simple_blog/app/controllers/posts_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ']'
+    respond_to do |format|
+              ^):
+  rake (0.8.7) lib/rake.rb:2503:in `const_missing'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:40:13) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSQLite3::SQLException: near "as": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "as": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:29) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:33) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (58.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:55) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (58.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:57) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:57) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:57) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:57) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:58) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:58) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (57.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:41:58) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (22.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:42:37) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ",": syntax error: SELECT "posts".* FROM "posts"   INNER JOIN "comments" ON comments.post_id = posts.id  WHERE (posts.id, COUNT(comments.id) as comments_count GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3) ):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:45:50) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:47:12) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:88:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (22.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:47:29) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:88:in `get_post'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (21.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:48:13) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-07 01:52:14) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (38.7ms)
+Completed in 44ms (View: 40, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-07 01:52:41) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"';j';kj';kj'k;nj'kn'kln", "title"=>"Place 3", "name"=>"Alex", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("updated_at", "content", "created_at", "name", "title", "comments_count") VALUES('2015-10-06 22:52:41', ''';j'';kj'';kj''k;nj''kn''kln', '2015-10-06 22:52:41', 'Alex', 'Place 3', NULL)[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 266ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:52:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 01:52:53) [POST]
+  Parameters: {"post_id"=>"2", "commit"=>"Create", "comment"=>{"body"=>"lklhlh;lh;ljh", "commenter"=>"Joey"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Joey', 'lklhlh;lh;ljh', 2, '2015-10-06 22:52:53', '2015-10-06 22:52:53')[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 261ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:52:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 01:53:31) [POST]
+  Parameters: {"post_id"=>"2", "commit"=>"Create", "comment"=>{"body"=>"lklh'lh'lkh'lhl", "commenter"=>"Lucy"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Lucy', 'lklh''lh''lkh''lhl', 2, '2015-10-06 22:53:31', '2015-10-06 22:53:31')[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 208ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:53:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:53:39) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 43ms (View: 3, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-07 01:53:46) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (6.0ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-07 01:54:07) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"ghkgfkfjlcgaglasgljgslk", "title"=>"Place 2", "name"=>"Bobby", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("updated_at", "content", "created_at", "name", "title", "comments_count") VALUES('2015-10-06 22:54:07', 'ghkgfkfjlcgaglasgljgslk', '2015-10-06 22:54:07', 'Bobby', 'Place 2', NULL)[0m
+Redirected to http://localhost:3000/posts/3
+Completed in 240ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:54:08) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 01:54:16) [POST]
+  Parameters: {"post_id"=>"3", "commit"=>"Create", "comment"=>{"body"=>"Ahahahaha", "commenter"=>"Alex"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Alex', 'Ahahahaha', 3, '2015-10-06 22:54:16', '2015-10-06 22:54:16')[0m
+Redirected to http://localhost:3000/posts/3
+Completed in 171ms (DB: 0) | 302 Found [http://localhost/posts/3/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:54:16) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 01:54:26) [POST]
+  Parameters: {"post_id"=>"3", "commit"=>"Create", "comment"=>{"body"=>"';kn'lk'klh'klh'klh'lk", "commenter"=>"Bobby"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Bobby', ''';kn''lk''klh''klh''klh''lk', 3, '2015-10-06 22:54:26', '2015-10-06 22:54:26')[0m
+Redirected to http://localhost:3000/posts/3
+Completed in 199ms (DB: 0) | 302 Found [http://localhost/posts/3/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:54:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 43ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 01:54:41) [POST]
+  Parameters: {"post_id"=>"3", "commit"=>"Create", "comment"=>{"body"=>"lhj;lghkhgk;hf;khv;khljhfljf", "commenter"=>"Lucy"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Lucy', 'lhj;lghkhgk;hf;khv;khljhfljf', 3, '2015-10-06 22:54:41', '2015-10-06 22:54:41')[0m
+Redirected to http://localhost:3000/posts/3
+Completed in 207ms (DB: 0) | 302 Found [http://localhost/posts/3/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:54:41) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:54:45) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-07 01:54:51) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (6.1ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-07 01:55:03) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"lakgS;LDHG;OIGHgh;OGUH", "title"=>"Place 1", "name"=>"Lucy", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("updated_at", "content", "created_at", "name", "title", "comments_count") VALUES('2015-10-06 22:55:03', 'lakgS;LDHG;OIGHgh;OGUH', '2015-10-06 22:55:03', 'Lucy', 'Place 1', NULL)[0m
+Redirected to http://localhost:3000/posts/4
+Completed in 217ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:55:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 01:55:12) [POST]
+  Parameters: {"post_id"=>"4", "commit"=>"Create", "comment"=>{"body"=>"jhfdjdfjfhdjdfjhdfjhfdjhfdjhdf", "commenter"=>"Alex"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Alex', 'jhfdjdfjfhdjdfjhdfjhfdjhfdjhdf', 4, '2015-10-06 22:55:12', '2015-10-06 22:55:12')[0m
+Redirected to http://localhost:3000/posts/4
+Completed in 222ms (DB: 0) | 302 Found [http://localhost/posts/4/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:55:12) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 01:55:21) [POST]
+  Parameters: {"post_id"=>"4", "commit"=>"Create", "comment"=>{"body"=>"ghdshdgsetwhdgshewhgdshew", "commenter"=>"Bobby"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Bobby', 'ghdshdgsetwhdgshewhgdshew', 4, '2015-10-06 22:55:21', '2015-10-06 22:55:21')[0m
+Redirected to http://localhost:3000/posts/4
+Completed in 340ms (DB: 0) | 302 Found [http://localhost/posts/4/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:55:21) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 45ms (View: 40, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 01:55:45) [POST]
+  Parameters: {"post_id"=>"4", "commit"=>"Create", "comment"=>{"body"=>"jhytityjgfxcmnbvk.jhilyfhj", "commenter"=>"Joseph"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Joseph', 'jhytityjgfxcmnbvk.jhilyfhj', 4, '2015-10-06 22:55:45', '2015-10-06 22:55:45')[0m
+Redirected to http://localhost:3000/posts/4
+Completed in 241ms (DB: 0) | 302 Found [http://localhost/posts/4/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:55:45) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 01:55:58) [POST]
+  Parameters: {"post_id"=>"4", "commit"=>"Create", "comment"=>{"body"=>"hgfdjfhdkthdkhgchfdhfdckhd", "commenter"=>"Dany"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o="}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("commenter", "body", "post_id", "updated_at", "created_at") VALUES('Dany', 'hgfdjfhdkthdkhgchfdhfdckhd', 4, '2015-10-06 22:55:58', '2015-10-06 22:55:58')[0m
+Redirected to http://localhost:3000/posts/4
+Completed in 218ms (DB: 0) | 302 Found [http://localhost/posts/4/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:55:58) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:56:03) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-07 01:56:06) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (6.3ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-07 01:57:07) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "post"=>{"content"=>"jlhlhfljfljfljhf", "title"=>"Invisible", "name"=>"Invisible", "tags_attributes"=>{"0"=>{"name"=>""}}}}
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("updated_at", "content", "created_at", "name", "title", "comments_count") VALUES('2015-10-06 22:57:07', 'jlhlhfljfljfljhf', '2015-10-06 22:57:07', 'Invisible', 'Invisible', NULL)[0m
+Redirected to http://localhost:3000/posts/5
+Completed in 212ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 01:57:07) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 5) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 5) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/5]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 01:57:08) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-07 01:57:39) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering home/index
+Completed in 38ms (View: 33, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-07 01:58:16) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering home/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-07 01:58:53) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering home/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-07 01:59:04) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering home/index
+Completed in 47ms (View: 41, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 02:02:09) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 02:03:22) [GET]
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+NoMethodError (undefined method `Post' for nil:NilClass):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (18.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 02:03:51) [GET]
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+NoMethodError (undefined method `post' for nil:NilClass):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (19.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 02:05:09) [GET]
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+NoMethodError (undefined method `posts' for nil:NilClass):
+  app/controllers/posts_controller.rb:7:in `index'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 02:08:41) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/posts]
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddCommentsCountToPosts (20151006201427)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime, "comments_count" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "posts"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_posts")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_posts"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "posts"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_posts")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_posts"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20151006201427'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 02:16:57) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-07 02:17:01) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering home/index
+Completed in 41ms (View: 35, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 02:17:07) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/posts]
