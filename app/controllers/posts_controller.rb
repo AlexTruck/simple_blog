@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :get_post, :only => [:show, :edit, :update, :destroy]
+  before_filter :get_post, :except => [:index, :new]
 
   # GET /posts
   # GET /posts.xml
@@ -74,6 +74,24 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
+    end
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    @post.liked
+    respond_to do |format|
+      format.html { redirect_to @post }
+      format.js { render :layout => false }
+    end
+  end
+
+  def unlike
+    @post = Post.find(params[:id])
+    @post.unliked
+    respond_to do |format|
+      format.html { redirect_to @post }
+      format.js { render :layout => false }
     end
   end
 
