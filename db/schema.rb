@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151006144437) do
+ActiveRecord::Schema.define(:version => 20151007070215) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20151006144437) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
