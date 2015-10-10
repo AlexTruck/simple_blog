@@ -4821,3 +4821,1742 @@ Rendering template within layouts/posts
 Rendering posts/show
   [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
 Completed in 48ms (View: 44, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-07 22:53:25) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering home/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 22:53:40) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 22:53:57) [POST]
+  Parameters: {"post_id"=>"4", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "comment"=>{"body"=>"Hello", "commenter"=>"Alex"}, "commit"=>"Create"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("post_id", "created_at", "body", "updated_at", "commenter") VALUES(4, '2015-10-07 19:53:57', 'Hello', '2015-10-07 19:53:57', 'Alex')[0m
+Redirected to http://localhost:3000/posts/4
+Completed in 131ms (DB: 0) | 302 Found [http://localhost/posts/4/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 22:53:57) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 22:54:06) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+
+ActionView::TemplateError (undefined method `name' for #<Post:0x7f7318883a78>) on line #12 of app/views/posts/index.html.erb:
+9: 
+10: <% @posts.each do |post| %>
+11:   <tr>
+12:     <td><%=h post.name %></td>
+13:     <td><%=h post.title %></td>
+14:     <td><%=h post.content %></td>
+15:     <td><%= link_to 'Show', post %></td>
+
+    app/views/posts/index.html.erb:12
+    app/views/posts/index.html.erb:10:in `each'
+    app/views/posts/index.html.erb:10
+    app/controllers/posts_controller.rb:8:in `index'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (66.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 22:54:13) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+
+ActionView::TemplateError (undefined method `name' for #<Post:0x7f73188880f0>) on line #12 of app/views/posts/index.html.erb:
+9: 
+10: <% @posts.each do |post| %>
+11:   <tr>
+12:     <td><%=h post.name %></td>
+13:     <td><%=h post.title %></td>
+14:     <td><%=h post.content %></td>
+15:     <td><%= link_to 'Show', post %></td>
+
+    app/views/posts/index.html.erb:12
+    app/views/posts/index.html.erb:10:in `each'
+    app/views/posts/index.html.erb:10
+    app/controllers/posts_controller.rb:8:in `index'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (68.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 22:54:33) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#destroy (for 127.0.0.1 at 2015-10-07 22:54:48) [DELETE]
+  Parameters: {"authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mPost Destroy (0.1ms)[0m   [0;1mDELETE FROM "posts" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/posts
+Completed in 121ms (DB: 0) | 302 Found [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 22:54:48) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-07 22:54:50) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+
+ActionView::TemplateError (undefined method `name' for #<Post:0x7f7318ac1380>) on line #7 of app/views/posts/_form.html.erb:
+4: 
+5:   <p>
+6:     <%= post_form.label :name %><br />
+7:     <%= post_form.text_field :name %>
+8:   </p>
+9:   <p>
+10:     <%= post_form.label :title, "title" %><br />
+
+    app/views/posts/_form.html.erb:7
+    app/views/posts/_form.html.erb:2
+    app/views/posts/new.html.erb:3
+    app/controllers/posts_controller.rb:28:in `new'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (81.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2015-10-07 22:55:07) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (7.9ms)
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-07 22:55:33) [POST]
+  Parameters: {"post"=>{"title"=>"Evening", "content"=>"Evening is great - I ate shish-kebab", "tags_attributes"=>{"0"=>{"name"=>""}}}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "commit"=>"Save"}
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (5.1ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2015-10-07 22:56:12) [POST]
+  Parameters: {"post"=>{"title"=>"Evening", "content"=>"Evening is great - I ate shish-kebab", "tags_attributes"=>{"0"=>{"name"=>""}}}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "commit"=>"Save"}
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("title", "created_at", "content", "updated_at") VALUES('Evening', '2015-10-07 19:56:12', 'Evening is great - I ate shish-kebab', '2015-10-07 19:56:12')[0m
+Redirected to http://localhost:3000/posts/6
+Completed in 150ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 22:56:12) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 6) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 6) [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/6]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-07 22:56:24) [POST]
+  Parameters: {"post_id"=>"6", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "comment"=>{"body"=>"Yahoooo!", "commenter"=>"Alina"}, "commit"=>"Create"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 6) [0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("post_id", "created_at", "body", "updated_at", "commenter") VALUES(6, '2015-10-07 19:56:24', 'Yahoooo!', '2015-10-07 19:56:24', 'Alina')[0m
+Redirected to http://localhost:3000/posts/6
+Completed in 200ms (DB: 0) | 302 Found [http://localhost/posts/6/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 22:56:24) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 6) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 6) [0m
+Completed in 44ms (View: 39, DB: 0) | 200 OK [http://localhost/posts/6]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 22:58:18) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2015-10-07 22:58:24) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 6) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" WHERE ("tags".post_id = 6) [0m
+Rendered posts/_form (6.5ms)
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/6/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2015-10-07 22:58:30) [PUT]
+  Parameters: {"post"=>{"title"=>"Even", "content"=>"Evening is great - I ate shish-kebab", "tags_attributes"=>{"0"=>{"name"=>""}}}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "id"=>"6", "commit"=>"Save"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 6) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" WHERE ("tags".post_id = 6) [0m
+Rendered posts/_form (42.5ms)
+Completed in 52ms (View: 44, DB: 0) | 200 OK [http://localhost/posts/6]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2015-10-07 22:58:45) [PUT]
+  Parameters: {"post"=>{"title"=>"Event", "content"=>"Evening is great - I ate shish-kebab", "tags_attributes"=>{"0"=>{"name"=>""}}}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "id"=>"6", "commit"=>"Save"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 6) [0m
+  [4;35;1mPost Update (0.2ms)[0m   [0mUPDATE "posts" SET "title" = 'Event', "updated_at" = '2015-10-07 19:58:45' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/posts/6
+Completed in 330ms (DB: 0) | 302 Found [http://localhost/posts/6]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 22:58:46) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 6) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 6) [0m
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/6]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 22:58:50) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 22:59:34) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+ERROR: compiling _run_erb_app47views47posts47index46html46erb RAISED compile error
+/home/truck/rails_projects/testings/simple_blog/app/views/posts/index.html.erb:15: syntax error, unexpected ',', expecting ')'
+..., :confirm => 'Are you sure?', :method => :delete ).to_s); @...
+                              ^
+Function body:           def _run_erb_app47views47posts47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing posts</h1>\n\n<table>\n  <tr>\n    <th>Title</th>\n    <th>Content</th>\n  </tr>\n\n"
+
+
+
+
+
+
+
+;  @posts.each do |post| ; @output_buffer.concat "\n  <tr>\n    <td>"
+
+; @output_buffer.concat((h post.title ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h post.content ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to <%=h post.title ).to_s); @output_buffer.concat ", post %></td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_post_path(post) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n\n<br />\n\n"
+
+
+
+
+; @output_buffer.concat(( link_to 'New post', new_post_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/truck/rails_projects/testings/simple_blog/app/views/posts/index.html.erb:25:in `compile!'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/renderable.rb:61:in `compile'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/renderable.rb:28:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/template.rb:205:in `render_template'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/base.rb:265:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/base.rb:348:in `_render_with_layout'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/base.rb:262:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:1252:in `render_for_file'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:51:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:51:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:135:in `send'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:179:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:173:in `each'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/truck/rails_projects/testings/simple_blog/app/controllers/posts_controller.rb:8:in `index'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:1333:in `send'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/filters.rb:617:in `call_filters'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/flash.rb:151:in `perform_action'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:532:in `send'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:532:in `process_without_filters'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/filters.rb:606:in `process'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:391:in `process'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:386:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/routing/route_set.rb:438:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `synchronize'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:48:in `service'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:14:in `run'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/truck/rails_projects/testings/simple_blog/app/views/posts/index.html.erb:15: syntax error, unexpected ',', expecting ')'
+..., :confirm => 'Are you sure?', :method => :delete ).to_s); @...
+                              ^) on line #15 of app/views/posts/index.html.erb:
+12:     <td><%=h post.content %></td>
+13:     <td><%= link_to <%=h post.title %>, post %></td>
+14:     <td><%= link_to 'Edit', edit_post_path(post) %></td>
+15:     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+16:   </tr>
+17: <% end %>
+18: </table>
+
+    app/views/posts/index.html.erb:25:in `compile!'
+    app/controllers/posts_controller.rb:8:in `index'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 22:59:59) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+ERROR: compiling _run_erb_app47views47posts47index46html46erb RAISED compile error
+/home/truck/rails_projects/testings/simple_blog/app/views/posts/index.html.erb:13: syntax error, unexpected '<', expecting ')'
+...put_buffer.concat(( link_to (<%=h post.title ).to_s); @outpu...
+                              ^
+Function body:           def _run_erb_app47views47posts47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing posts</h1>\n\n<table>\n  <tr>\n    <th>Title</th>\n    <th>Content</th>\n  </tr>\n\n"
+
+
+
+
+
+
+
+;  @posts.each do |post| ; @output_buffer.concat "\n  <tr>\n    <td>"
+
+; @output_buffer.concat((h post.title ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h post.content ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to (<%=h post.title ).to_s); @output_buffer.concat "), post %></td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_post_path(post) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n\n<br />\n\n"
+
+
+
+
+; @output_buffer.concat(( link_to 'New post', new_post_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/truck/rails_projects/testings/simple_blog/app/views/posts/index.html.erb:25:in `compile!'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/renderable.rb:61:in `compile'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/renderable.rb:28:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/template.rb:205:in `render_template'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/base.rb:265:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/base.rb:348:in `_render_with_layout'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/base.rb:262:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:1252:in `render_for_file'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:51:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:51:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:135:in `send'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:179:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:173:in `each'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/truck/rails_projects/testings/simple_blog/app/controllers/posts_controller.rb:8:in `index'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:1333:in `send'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/filters.rb:617:in `call_filters'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/flash.rb:151:in `perform_action'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:532:in `send'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:532:in `process_without_filters'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/filters.rb:606:in `process'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:391:in `process'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:386:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/routing/route_set.rb:438:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `synchronize'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:48:in `service'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:14:in `run'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/truck/rails_projects/testings/simple_blog/app/views/posts/index.html.erb:13: syntax error, unexpected '<', expecting ')'
+...put_buffer.concat(( link_to (<%=h post.title ).to_s); @outpu...
+                              ^) on line #13 of app/views/posts/index.html.erb:
+10:   <tr>
+11:     <td><%=h post.title %></td>
+12:     <td><%=h post.content %></td>
+13:     <td><%= link_to (<%=h post.title %>), post %></td>
+14:     <td><%= link_to 'Edit', edit_post_path(post) %></td>
+15:     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+16:   </tr>
+
+    app/views/posts/index.html.erb:25:in `compile!'
+    app/controllers/posts_controller.rb:8:in `index'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 23:00:17) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 23:00:26) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 23:00:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 23:00:39) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 23:01:11) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-07 23:02:16) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering home/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2015-10-07 23:02:28) [GET]
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+Rendering registrations/new
+Rendered shared/_devise_links (0.5ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#create (for 127.0.0.1 at 2015-10-07 23:02:38) [POST]
+  Parameters: {"authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "commit"=>"Sign up", "user"=>{"password"=>"", "name"=>"", "password_confirmation"=>"", "email"=>""}}
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+Rendering registrations/new
+Rendered shared/_devise_links (0.6ms)
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2015-10-07 23:04:16) [GET]
+  Parameters: {"controllers"=>{"registrations"=>"users/registrations"}}
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+Rendering sessions/new
+Rendered shared/_devise_links (0.5ms)
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-07 23:04:32) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering home/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-07 23:04:49) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 48ms (View: 9, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-07 23:06:26) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/2]
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-08 15:57:04) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 136ms (View: 90, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-08 15:57:11) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 30ms (View: 26, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-08 16:27:53) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-08 23:56:10) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-08 23:56:18) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-08 23:56:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+ERROR: compiling _run_erb_app47views47posts47show46html46erb RAISED compile error
+/home/truck/rails_projects/testings/simple_blog/app/views/posts/show.html.erb:28: syntax error, unexpected ':', expecting ')'
+...lete_task_path(@task), method: :patch, remote: true).to_s); ...
+                              ^
+Function body:           def _run_erb_app47views47posts47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<p>\n  <b>Title:</b>\n  "
+
+; @output_buffer.concat((h @post.title ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Content:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @post.content ).to_s); @output_buffer.concat "\n</p>\n\n"
+
+
+;  form_for([@post, @post.comments.build]) do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :commenter ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :commenter ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :body ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_area :body ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit "Create" ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n<span id=\"show_comments\">\n  "
+
+
+; @output_buffer.concat(( link_to 'Comments', incomplete_task_path(@task), method: :patch, remote: true).to_s); @output_buffer.concat "\n</span>\n\n<a>Comments</a>\n"
+
+
+
+;  @post.comments.each do |c| ; @output_buffer.concat "\n  <p>\n    "
+
+; @output_buffer.concat((h c.commenter ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat((h c.body ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Edit Post', edit_post_path(@post) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Back to Posts', posts_path ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Manage Comments', post_comments_path(@post) ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/truck/rails_projects/testings/simple_blog/app/views/posts/show.html.erb:47:in `compile!'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/renderable.rb:61:in `compile'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/renderable.rb:28:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/template.rb:205:in `render_template'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/base.rb:265:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/base.rb:348:in `_render_with_layout'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_view/base.rb:262:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:1252:in `render_for_file'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:51:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:51:in `render'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:135:in `send'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:179:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:173:in `each'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/truck/rails_projects/testings/simple_blog/app/controllers/posts_controller.rb:17:in `show'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:1333:in `send'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/filters.rb:617:in `call_filters'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/flash.rb:151:in `perform_action'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:532:in `send'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:532:in `process_without_filters'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/filters.rb:606:in `process'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:391:in `process'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/base.rb:386:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/routing/route_set.rb:438:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `synchronize'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:48:in `service'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:14:in `run'
+/home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/truck/rails_projects/testings/simple_blog/app/views/posts/show.html.erb:28: syntax error, unexpected ':', expecting ')'
+...lete_task_path(@task), method: :patch, remote: true).to_s); ...
+                              ^) on line #28 of app/views/posts/show.html.erb:
+25: <% end %>
+26: 
+27: <span id="show_comments">
+28:   <%= link_to 'Comments', incomplete_task_path(@task), method: :patch, remote: true%>
+29: </span>
+30: 
+31: <a>Comments</a>
+
+    app/views/posts/show.html.erb:47:in `compile!'
+    app/controllers/posts_controller.rb:17:in `show'
+    warden (0.10.7) lib/warden/manager.rb:35:in `call'
+    warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.7) lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.9ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-08 23:56:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 50ms (View: 45, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-08 23:56:49) [POST]
+  Parameters: {"post_id"=>"2", "comment"=>{"body"=>"", "commenter"=>""}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "commit"=>"Create"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("updated_at", "post_id", "body", "commenter", "created_at") VALUES('2015-10-08 20:56:49', 2, '', '', '2015-10-08 20:56:49')[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 162ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-08 23:56:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-08 23:57:04) [POST]
+  Parameters: {"post_id"=>"2", "comment"=>{"body"=>"Hehe", "commenter"=>"Alex"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "commit"=>"Create"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("updated_at", "post_id", "body", "commenter", "created_at") VALUES('2015-10-08 20:57:04', 2, 'Hehe', 'Alex', '2015-10-08 20:57:04')[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 136ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-08 23:57:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-08 23:57:07) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 33ms (View: 28, DB: 0) | 200 OK [http://localhost/posts/2/comments]
+
+
+Processing CommentsController#destroy (for 127.0.0.1 at 2015-10-08 23:57:12) [DELETE]
+  Parameters: {"post_id"=>"2", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "id"=>"14"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 14) [0m
+  [4;36;1mComment Destroy (0.1ms)[0m   [0;1mDELETE FROM "comments" WHERE "id" = 14[0m
+Redirected to http://localhost:3000/posts/2/comments
+Completed in 173ms (DB: 0) | 302 Found [http://localhost/posts/2/comments/14]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-08 23:57:12) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/2/comments]
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 00:19:05) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 42ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2015-10-09 00:19:07) [GET]
+  Parameters: {"post_id"=>"2", "id"=>"3"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 3 AND ("comments".post_id = 2)) [0m
+Rendering template within layouts/application
+Rendering comments/show
+Completed in 24ms (View: 18, DB: 0) | 200 OK [http://localhost/posts/2/comments/3]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 00:19:11) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 41ms (View: 36, DB: 0) | 200 OK [http://localhost/posts/2/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 00:19:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2015-10-09 00:19:23) [POST]
+  Parameters: {"post_id"=>"2", "comment"=>{"body"=>"Hehe", "commenter"=>"Alex"}, "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "commit"=>"Create"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("updated_at", "post_id", "body", "commenter", "created_at") VALUES('2015-10-08 21:19:23', 2, 'Hehe', 'Alex', '2015-10-08 21:19:23')[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 209ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 00:19:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 00:19:37) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/2/comments]
+
+
+Processing CommentsController#destroy (for 127.0.0.1 at 2015-10-09 00:19:41) [DELETE]
+  Parameters: {"post_id"=>"2", "authenticity_token"=>"1hIXfUqAci1C8negZw8aZ91s3uMeSPCZVn0b5kqXz9o=", "id"=>"15"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 15) [0m
+  [4;35;1mComment Destroy (0.1ms)[0m   [0mDELETE FROM "comments" WHERE "id" = 15[0m
+Redirected to http://localhost:3000/posts/2/comments
+Completed in 132ms (DB: 0) | 302 Found [http://localhost/posts/2/comments/15]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 00:19:41) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/2/comments]
+/!\ FAILSAFE /!\  Fri Oct 09 00:25:56 +0300 2015
+  Status: 500 Internal Server Error
+  /home/truck/rails_projects/testings/simple_blog/app/helpers/comments_helper.rb:3: syntax error, unexpected ':', expecting kEND
+    link_to 'Comments', comment_path(comment), remote: true
+                                                      ^
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:250:in `depend_on'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:162:in `require_dependency'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:126:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:120:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/rails_projects/testings/simple_blog/app/controllers/application_controller.rb:5
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:451:in `load_missing_constant'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:106:in `rake_original_const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rake-0.8.7/lib/rake.rb:2503:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:118:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `synchronize'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:48:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:14:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/commands/server.rb:111
+    script/server:3:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 00:26:05 +0300 2015
+  Status: 500 Internal Server Error
+  /home/truck/rails_projects/testings/simple_blog/app/helpers/comments_helper.rb:3: syntax error, unexpected ':', expecting kEND
+    link_to 'Comments', comment_path(comment), remote: true
+                                                      ^
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:250:in `depend_on'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:162:in `require_dependency'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:126:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:120:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/rails_projects/testings/simple_blog/app/controllers/application_controller.rb:5
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:451:in `load_missing_constant'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:106:in `rake_original_const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rake-0.8.7/lib/rake.rb:2503:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:118:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `synchronize'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:48:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:14:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/commands/server.rb:111
+    script/server:3:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 00:26:09 +0300 2015
+  Status: 500 Internal Server Error
+  /home/truck/rails_projects/testings/simple_blog/app/helpers/comments_helper.rb:3: syntax error, unexpected ':', expecting kEND
+    link_to 'Comments', comment_path(comment), remote: true
+                                                      ^
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:250:in `depend_on'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:162:in `require_dependency'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:126:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:120:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/rails_projects/testings/simple_blog/app/controllers/application_controller.rb:5
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:451:in `load_missing_constant'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:106:in `rake_original_const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rake-0.8.7/lib/rake.rb:2503:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:118:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `synchronize'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:48:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:14:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/commands/server.rb:111
+    script/server:3:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 00:26:10 +0300 2015
+  Status: 500 Internal Server Error
+  /home/truck/rails_projects/testings/simple_blog/app/helpers/comments_helper.rb:3: syntax error, unexpected ':', expecting kEND
+    link_to 'Comments', comment_path(comment), remote: true
+                                                      ^
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:250:in `depend_on'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:162:in `require_dependency'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:126:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:120:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/rails_projects/testings/simple_blog/app/controllers/application_controller.rb:5
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:451:in `load_missing_constant'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:106:in `rake_original_const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rake-0.8.7/lib/rake.rb:2503:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:118:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `synchronize'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:48:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:14:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/commands/server.rb:111
+    script/server:3:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Oct 09 00:26:16 +0300 2015
+  Status: 500 Internal Server Error
+  /home/truck/rails_projects/testings/simple_blog/app/helpers/comments_helper.rb:3: syntax error, unexpected ':', expecting kEND
+    link_to 'Comments', comment_path(comment), remote: true
+                                                      ^
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:250:in `depend_on'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:162:in `require_dependency'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:126:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:120:in `helper'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /home/truck/rails_projects/testings/simple_blog/app/controllers/application_controller.rb:5
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_without_new_constant_marking'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:451:in `load_missing_constant'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:106:in `rake_original_const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rake-0.8.7/lib/rake.rb:2503:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:118:in `const_missing'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `synchronize'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:48:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rack-1.1.6/lib/rack/handler/webrick.rb:14:in `run'
+    /home/truck/.rvm/gems/ruby-1.8.7-head/gems/rails-2.3.18/lib/commands/server.rb:111
+    script/server:3:in `require'
+    script/server:3
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2015-10-09 00:28:30) [GET]
+
+ActionController::RoutingError (No route matches "/post" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/truck/.rvm/rubies/ruby-1.8.7-head/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-09 00:28:42) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 40ms (View: 36, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 00:28:44) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 00:28:47) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/4/comments]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-09 00:28:56) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-09 00:28:57) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-09 02:18:16) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-09 02:18:58) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 02:19:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 02:22:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 02:32:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:32:46) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/comments/index?post_id=2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:32:50) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/comments/index?post_id=2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:32:52) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 40ms (View: 7, DB: 0) | 200 OK [http://localhost/comments/index?post_id=2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:32:54) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/comments/index?post_id=2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:32:55) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/comments/index?post_id=2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 02:32:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 44ms (View: 38, DB: 0) | 200 OK [http://localhost/posts/2]
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 02:33:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 40ms (View: 15, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:33:36) [GET]
+  Parameters: {"post_id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Completed in 44ms (View: 38, DB: 0) | 200 OK [http://localhost/comments/index?post_id=2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2015-10-09 02:33:44) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 75ms (View: 71, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-09 02:33:56) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 81ms (View: 74, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2015-10-09 02:33:57) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT posts.*, COUNT(comments.id) as comments_count FROM "posts" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id ORDER BY comments_count DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".post_id = 3) [0m
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead. (called from /home/truck/rails_projects/testings/simple_blog/app/models/user.rb:4)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 02:34:02) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:34:04) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:34:06) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 44ms (View: 9, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:34:15) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-09 02:35:08) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:35:10) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 24ms (View: 15, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:35:12) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:35:14) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-09 02:35:16) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2015-10-10 13:59:46) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 222ms (View: 187, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-10 13:59:52) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 44ms (View: 37, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-10 13:59:54) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2015-10-10 13:59:59) [GET]
+  Parameters: {"post_id"=>"4"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/comments/index?post_id=4]

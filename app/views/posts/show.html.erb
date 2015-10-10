@@ -24,16 +24,36 @@
   </p>
 <% end %>
 
-<h2>Comments</h2>
-<% @post.comments.each do |c| %>
-  <p>
-    <%=h c.commenter %>
-  </p>
+<a href='#' id='show_comments'>Comments</a>
+<div class='comments'>
+  <div class='tmpl'>
+    <p class='commenter'></p>
+    <p class='body'></p>
+  </div>
+  <div class='container'></div>
+</div>
+<script>
+$(document).ready(function() {
+  $('#show_comments').on('click', function(e ) {
+    var $tmpl = $('.comments .tmpl'),
+      $container = $('.comments .container')
 
-  <p>
-    <%=h c.body %>
-  </p>
-<% end %>
+    $.getJSON('/comments/index?post_id=' + <%= "#{@post.id}" %>)
+      .success(function(data) {
+        $(data).each(function(i, comment) {
+          var $commentEl = $tmpl.clone()
+
+          $commentEl.find('commenter').text(comment.commenter)
+          $commentEl.find('body').text(comment.body)
+
+          $container.append($commentEl)
+        })
+      })
+
+    e.preventDefault()
+  })
+})
+</script>
 
 <%= link_to 'Edit Post', edit_post_path(@post) %> |
 <%= link_to 'Back to Posts', posts_path %> |
