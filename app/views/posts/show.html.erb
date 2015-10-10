@@ -36,15 +36,17 @@
 $(document).ready(function() {
   $('#show_comments').on('click', function(e ) {
     var $tmpl = $('.comments .tmpl'),
-      $container = $('.comments .container')
+        $container = $('.comments .container')
 
     $.getJSON('/comments/index?post_id=' + <%= "#{@post.id}" %>)
       .success(function(data) {
-        $(data).each(function(i, comment) {
-          var $commentEl = $tmpl.clone()
+        $(data).each(function(i, d) {
+          var $commentEl = $tmpl.clone(),
+              comment = d.comment
 
-          $commentEl.find('commenter').text(comment.commenter)
-          $commentEl.find('body').text(comment.body)
+          $commentEl.attr('class', 'comment')
+          $commentEl.find('.commenter').text(comment.commenter)
+          $commentEl.find('.body').text(comment.body)
 
           $container.append($commentEl)
         })

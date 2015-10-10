@@ -3,6 +3,10 @@ class CommentsController < ApplicationController
 
   def index
     @comments = @post.comments
+
+    if request.xhr?
+      render :json => @comments.to_json and return
+    end
   end
 
   def show
