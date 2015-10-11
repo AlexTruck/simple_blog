@@ -1,21 +1,14 @@
-<h1>Listing posts</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-  </tr>
+<h1>My posts</h1>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= link_to post.title, post %></td>
-    <td><%=h post.content %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div class='post'>
+  <span class='post post-title'><%=h post.title %></span>
+  <span class='posted-at'><%=h post.created_at.strftime("%B %d, %Y") %></span>
+  <span class='posted-at'><%= link_to 'Edit', edit_post_path(post) %></span>
+  <span class='posted-at'><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></span>
+  <p><%=h post.content %></p>
+  <p class='comments-amount'>Comments: <%=h post.comments.count %></p>
+</div>
 <% end %>
-</table>
-
-<br />
 
 <%= link_to 'New post', new_post_path %>
