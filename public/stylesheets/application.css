@@ -1,0 +1,89 @@
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #eeeeee;
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+header {
+  background: #785252;
+  height: 50px;
+  border: 1px solid #000;
+  border-radius: 0 0 5px 5px;
+}
+
+header #logo {
+  float: left;
+  margin: 10px 0 0 50px;
+  color: #eeeeee;
+  font-size: 25px;
+}
+
+header #entrance {
+  float: right;
+  margin: 15px 50px 0 0;
+}
+
+.link {
+  padding: 2px 4px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.link, .link:visited {
+  color: #eee;
+}
+
+.link:hover, .link:active {
+  background: #333333;
+}
+
+.link:active {
+  color: #8242E3;
+}
+
+h1 {
+  margin: 20px 0 0 30px;
+  color: #8242E3;
+  font-size: 45px;
+}
+
+.post {
+  width: 900px;
+  margin-top: 40px;
+  padding: 5px 0;
+}
+
+.post-title {
+  color: #A36DF3;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+p {
+  margin: 5px 0;
+  color: #000;
+  font-size: 14px;
+}
+
+.posted-at {
+  margin-left: 20px;
+  padding: 0 5px;
+  color: #A8A4A4;
+  font-size: 12px;
+  border-left: 1px solid #A8A4A4;
+  border-right: 1px solid #A8A4A4;
+}
+
+.comments-amount {
+  color: #958B8B;
+  font-size: 12px;
+}

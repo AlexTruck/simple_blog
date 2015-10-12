@@ -5,14 +5,33 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Posts: <%= controller.action_name %></title>
-  <%= javascript_include_tag "jquery-1.11.3", "rails" %>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= javascript_include_tag 'jquery-1.11.3', 'rails' %>
+  <%= stylesheet_link_tag 'scaffold', 'application', 'bootstrap-responsive' %>
 </head>
-<body style="background: #EEEEEE;">
+<body>
+
+<div id='wrapper'>
+
+<header>
+  <span id='logo'>Simple Blog</span>
+  <span id='entrance'>
+    <% if current_user %>
+      <%= link_to "My posts", {:controller => 'posts'}, :class => 'link' %>
+      <%= link_to "Logout", {:controller => 'posts'}, :class => 'link' %>
+    <% end %>
+
+    <% if !current_user %>
+      <%= link_to "Login", {:controller => 'users/sign_in'}, :class => 'link' %>
+      <%= link_to "Sign up", {:controller => 'users/sign_up'}, :class => 'link' %>
+    <% end %>
+  </span>
+</header>
 
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield  %>
+
+</div>
 
 </body>
 </html>
